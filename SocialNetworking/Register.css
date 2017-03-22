@@ -1,0 +1,31 @@
+﻿
+.text {
+    background-color:#ffd800;
+    color:black;
+    text-wrap:normal;
+    text-align:center;
+}
+.step1, .step2, .step3, .step4, .step5, .captcha, .step6{
+    background-color:#b59706;
+    text-shadow:0 0 10px white;
+    border-radius:50px;
+    box-shadow:0px 0px 10px #ffd800;
+    padding:100px;
+    width:900px;
+    min-width:900px;
+    max-width:900px;
+    margin:0px auto 0px auto;
+    text-align:center;
+}
+.Rules {
+    padding: 10px;
+    margin: 0 auto 0 auto;
+    box-shadow: 0 0 10px black;
+    width: 400px;
+    background-color: #f6e587;
+}
+    .Rules img {
+        margin:0 auto 0 auto;
+        width:350px;
+        display:block;
+    }

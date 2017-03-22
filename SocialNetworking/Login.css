@@ -1,0 +1,19 @@
+﻿.logintable {
+    margin-bottom:auto;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:auto;
+    background-color:white;
+    background-color:rgba(255, 255, 255, 0.80);
+    padding:50px;
+    padding-top:200px;
+    padding-bottom:0px;
+    border-bottom-left-radius:100px;
+    border-bottom-right-radius:100px;
+    box-shadow:0px 0px 10px 2px white;
+    text-align:center;
+}
+.btn_login {
+}
+hl_forgotpassword {
+}

@@ -1,0 +1,128 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="TvMasterPage.master.cs" Inherits="App_MasterPage_TvMasterPage" %>
+
+<%@ Register src="../App_UserControl/Adverties-UserControls/Adverties1.ascx" tagname="Adverties1" tagprefix="uc2" %>
+<%@ Register src="../App_UserControl/News-UserControls/News-Group.ascx" tagname="News" tagprefix="uc7" %>
+<%@ Register src="../App_UserControl/News-UserControls/News-User.ascx" tagname="News" tagprefix="uc6" %>
+<%@ Register src="../App_UserControl/Loading-UserControls/Loading2.ascx" tagname="Loading2" tagprefix="uc3" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="<%$ Resources:Resource, StyleSheetTv %>" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="<%:WebsitePage.WebsiteRoot(true, false)%>/App_Scripts/-jquery.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.banner').load('<%:WebsitePage.WebsiteRoot(true, false)%>/App_HTML/TvBanner.html');
+        });
+    </script>
+    <link href="<%$ Resources:Resource, icon %>" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+    <form id="f_Default" runat="server">
+        <asp:ScriptManager ID="DefaultSM" runat="server"></asp:ScriptManager>
+        <asp:UpdateProgress ID="DefaultUpdateProgress" runat="server" DisplayAfter="0">
+            <ProgressTemplate>
+                <uc3:Loading2 ID="Loading" runat="server" />
+            </ProgressTemplate>
+        </asp:UpdateProgress>
+        <div class="siteMap">
+            <asp:ContentPlaceHolder ID="SiteMapCPH" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="banner">
+        </div>
+        <h1 class="PageTitle">
+            <asp:ContentPlaceHolder ID="PageTitleCPH" runat="server">
+            </asp:ContentPlaceHolder>
+        </h1>
+        <asp:UpdatePanel ID="DefaultUP" runat="server">
+            <ContentTemplate>
+                <div class="DefaultContent">
+                    <asp:ContentPlaceHolder ID="DefaultContentPlaceHolder" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        <div class="div_player">
+            <asp:ContentPlaceHolder ID="PlayerContentPlaceHolder" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="news-group">
+            <asp:Label ID="JornalsLable" runat="server" Text="<%$ Resources:Resource, NewsGroup %>" CssClass="title"></asp:Label>
+            <asp:DataList ID="GroupDataList" runat="server" DataKeyField="GroupID" DataSourceID="GroupDataSource">
+                <ItemTemplate>
+                    <asp:HyperLink ID="GroupHyperlink" runat="server" Text='<%# Eval("Name") %>' NavigateUrl='<%# Eval("GroupID", "~/App_Page/TV/PlayByGroup.aspx?GroupID={0}") %>' CssClass="links" />
+                </ItemTemplate>
+                <SeparatorTemplate>
+                    <asp:Image ID="SeperatorImage" runat="server" ImageUrl="~/App_Image/Seperator/shortline.png" />
+                </SeparatorTemplate>
+            </asp:DataList>
+            <asp:SqlDataSource ID="GroupDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Name,GroupID FROM [News-Group] ORDER BY Name DESC"></asp:SqlDataSource>
+        </div>
+        <div class="news-user">
+            <asp:Label ID="JornalsLable0" runat="server" CssClass="title" Text="<%$ Resources:Resource, Jornals %>"></asp:Label>
+            <asp:DataList ID="UserDataList" runat="server" DataKeyField="UserID" DataSourceID="UserDataSource">
+                <ItemTemplate>
+                    <asp:HyperLink ID="FullnameHyperlink" runat="server" CssClass="links" NavigateUrl='<%# Eval("UserID", "~/App_Page/TV/PlayByUser.aspx?UserID={0}") %>' Text='<%# Eval("Fullname") %>' />
+                </ItemTemplate>
+                <SeparatorTemplate>
+                    <asp:Image ID="SeperatorImage" runat="server" ImageUrl="~/App_Image/Seperator/shortline.png" />
+                </SeparatorTemplate>
+            </asp:DataList>
+            <asp:SqlDataSource ID="UserDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Fullname,UserID FROM [Users-Users] WHERE ([MainType]=N'Jornal') ORDER BY Fullname DESC"></asp:SqlDataSource>
+        </div>
+        <div class="adverties">
+            <uc2:Adverties1 ID="Adverties1" runat="server" />
+        </div>
+        <div class="news-archive">
+            <asp:DataList ID="TopDataList" runat="server" DataKeyField="ID" DataSourceID="TopSqlDataSource">
+                <ItemTemplate>
+                    <asp:HyperLink ID="relatedTitle" runat="server" CssClass="relatedTitle" NavigateUrl='<%# Eval("VideoId", "~/App_Page/TV/Play.aspx?VideoId={0}") %>' Text='<%# Eval("VideoTitle") %>' />
+                </ItemTemplate>
+                <SeparatorTemplate>
+                    <asp:Image ID="SeperatorImage" runat="server" ImageUrl="~/App_Image/Seperator/shortline.png" />
+                </SeparatorTemplate>
+            </asp:DataList>
+            <asp:SqlDataSource ID="TopSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT TOP 10 VideoTitle,ID,VideoId FROM [News-TV] ORDER BY ID DESC"></asp:SqlDataSource>
+        </div>
+        <div class="news-view">
+            <asp:Label ID="ViewLableNewsArchive" runat="server" Text="<%$ Resources:Resource, Views %>" CssClass="title"></asp:Label>
+            <asp:DataList ID="ViewDataList0" runat="server" DataKeyField="ID" DataSourceID="ViewDataSource0">
+                <ItemTemplate>
+                    <asp:HyperLink ID="headlineHyperlink" NavigateUrl='<%# Eval("VideoTitle", "~/App_Page/TV/PlayByTitle.aspx?Title={0}") %>' runat="server" Text='<%# Eval("VideoTitle") %>' CssClass="links" />
+                </ItemTemplate>
+                <SeparatorTemplate>
+                    <asp:Image ID="SeperatorImage" runat="server" ImageUrl="~/App_Image/Seperator/shortline.png" />
+                </SeparatorTemplate>
+            </asp:DataList>
+            <asp:SqlDataSource ID="ViewDataSource0" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT TOP 10 VideoTitle,ID FROM [News-TV] ORDER BY [Views] DESC"></asp:SqlDataSource>
+        </div>
+        <div class="news-like">
+            <asp:Label ID="LikeLableNewsArchive" runat="server" Text="<%$ Resources:Resource, Likes %>" CssClass="title"></asp:Label>
+            <asp:DataList ID="LikesDataList1" runat="server" DataKeyField="ID" DataSourceID="LikesDataSource1">
+                <ItemTemplate>
+                    <asp:HyperLink ID="headlineHyperlink" NavigateUrl='<%# Eval("VideoTitle", "~/App_Page/TV/PlayByTitle.aspx?Title={0}") %>' runat="server" Text='<%# Eval("VideoTitle") %>' CssClass="links" />
+                </ItemTemplate>
+                <SeparatorTemplate>
+                    <asp:Image ID="SeperatorImage" runat="server" ImageUrl="~/App_Image/Seperator/shortline.png" />
+                </SeparatorTemplate>
+            </asp:DataList>
+            <asp:SqlDataSource ID="LikesDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT TOP 10 VideoTitle,ID FROM [News-TV] ORDER BY [Likes] DESC"></asp:SqlDataSource>
+        </div>
+        <asp:UpdatePanel ID="ToolBarUP" runat="server">
+            <ContentTemplate>
+                <div class="toolbar">
+                    <asp:ContentPlaceHolder ID="ToolBarCPH" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    </form>
+
+    <script type="text/javascript" src="<%:WebsitePage.WebsiteRoot(true, false)%>/App_Scripts/TvJavaScript.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+D:\Reza\Projects\SnowCity HtmlEditor\ASP.NET 4.0\Winthusiasm.HtmlEditor\bin\Debug\SnowCity.HtmlEditor.dll
+D:\Reza\Projects\SnowCity HtmlEditor\ASP.NET 4.0\Winthusiasm.HtmlEditor\bin\Debug\SnowCity.HtmlEditor.pdb
+D:\Reza\Projects\SnowCity HtmlEditor\ASP.NET 4.0\Winthusiasm.HtmlEditor\obj\Debug\Winthusiasm.HtmlEditor.csprojResolveAssemblyReference.cache
+D:\Reza\Projects\SnowCity HtmlEditor\ASP.NET 4.0\Winthusiasm.HtmlEditor\obj\Debug\SnowCity.HtmlEditor.dll
+D:\Reza\Projects\SnowCity HtmlEditor\ASP.NET 4.0\Winthusiasm.HtmlEditor\obj\Debug\SnowCity.HtmlEditor.pdb

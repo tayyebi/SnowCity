@@ -1,0 +1,165 @@
+﻿namespace WBrowser
+{
+    partial class OrganizeFavorites
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("پیوند ها");
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.organizeFavTreeView = new System.Windows.Forms.TreeView();
+            this.button4 = new System.Windows.Forms.Button();
+            this.organizeContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.organizeContextMenu.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Font = new System.Drawing.Font("Tahoma", 7F);
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(212, 41);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(62, 25);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "حذف";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.Font = new System.Drawing.Font("Tahoma", 7F);
+            this.button3.ForeColor = System.Drawing.Color.Black;
+            this.button3.Location = new System.Drawing.Point(212, 10);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(62, 25);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "تغییر نام";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // organizeFavTreeView
+            // 
+            this.organizeFavTreeView.BackColor = System.Drawing.Color.White;
+            this.organizeFavTreeView.Font = new System.Drawing.Font("Tahoma", 7F);
+            this.organizeFavTreeView.ForeColor = System.Drawing.Color.Black;
+            this.organizeFavTreeView.Location = new System.Drawing.Point(10, 11);
+            this.organizeFavTreeView.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.organizeFavTreeView.Name = "organizeFavTreeView";
+            treeNode1.Name = "Links";
+            treeNode1.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode1.Text = "پیوند ها";
+            this.organizeFavTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode1});
+            this.organizeFavTreeView.RightToLeftLayout = true;
+            this.organizeFavTreeView.ShowNodeToolTips = true;
+            this.organizeFavTreeView.Size = new System.Drawing.Size(189, 238);
+            this.organizeFavTreeView.TabIndex = 4;
+            this.organizeFavTreeView.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.organizeFavTreeView_NodeMouseClick);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.Font = new System.Drawing.Font("Tahoma", 7F);
+            this.button4.ForeColor = System.Drawing.Color.Black;
+            this.button4.Location = new System.Drawing.Point(212, 217);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(62, 30);
+            this.button4.TabIndex = 5;
+            this.button4.Text = "انصراف";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // organizeContextMenu
+            // 
+            this.organizeContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.renameToolStripMenuItem,
+            this.deleteToolStripMenuItem});
+            this.organizeContextMenu.Name = "organizeContextMenu";
+            this.organizeContextMenu.Size = new System.Drawing.Size(106, 48);
+            // 
+            // renameToolStripMenuItem
+            // 
+            this.renameToolStripMenuItem.Name = "renameToolStripMenuItem";
+            this.renameToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.renameToolStripMenuItem.Text = "تغییر نام";
+            this.renameToolStripMenuItem.Click += new System.EventHandler(this.renameToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.deleteToolStripMenuItem.Text = "حذف";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // OrganizeFavorites
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 11F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(285, 259);
+            this.Controls.Add(this.organizeFavTreeView);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button1);
+            this.Font = new System.Drawing.Font("Tahoma", 7F);
+            this.ForeColor = System.Drawing.Color.Black;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "OrganizeFavorites";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.RightToLeftLayout = true;
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "مدیریت پیوند ها";
+            this.Load += new System.EventHandler(this.OrganizeFavorites_Load);
+            this.organizeContextMenu.ResumeLayout(false);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TreeView organizeFavTreeView;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ContextMenuStrip organizeContextMenu;
+        private System.Windows.Forms.ToolStripMenuItem renameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+    }
+}

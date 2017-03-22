@@ -1,0 +1,17 @@
+﻿.gv_archive {
+    background-color:#564f00;
+    color:#f6ef9f;
+    width:100%;
+}
+.gv_archive_Row:hover {
+    color:#564f00;
+    background-color:#f6ef9f;
+}
+.lbl_Likes {
+    color:#41a80b;
+    text-shadow:0 0 5px;
+}
+.lbl_Hates {
+    color:#ff0000;
+    text-shadow:0 0 5px;
+}

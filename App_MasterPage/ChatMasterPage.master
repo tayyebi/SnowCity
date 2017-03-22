@@ -1,0 +1,120 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ChatMasterPage.master.cs" Inherits="App_MasterPage_ChatMasterPage" %>
+
+
+<%@ Register src="../App_UserControl/Adverties-UserControls/Adverties3.ascx" tagname="Adverties3" tagprefix="uc2" %>
+<%@ Register src="../App_UserControl/ChatRoom-UserControls/ChatRoomTextBox.ascx" tagname="ChatRoomTextBox" tagprefix="uc3" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="<%$ Resources:Resource, StyleSheetChat %>" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="<%:WebsitePage.WebsiteRoot(true, false)%>/App_Scripts/-jquery.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.ChatRoomDefault').load('<%:WebsitePage.WebsiteRoot(true, false)%>/App_HTML/ChatRoomDefault.html');
+            $('.banner').load('<%:WebsitePage.WebsiteRoot(true, false)%>/App_HTML/ChatRoomBanner.html');
+        });
+    </script>
+    <link href="<%$ Resources:Resource, icon %>" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+    <form id="DefaultForm" runat="server">
+        <asp:ScriptManager ID="DefaultScriptManager" runat="server">
+        </asp:ScriptManager>
+        <asp:SqlDataSource ID="MessageSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT TOP (9) ChatValue,ChatID,Nickname FROM [Chat-Value] WHERE (Nickname = @Nickname) OR (ReciverNickname = @Nickname) ORDER BY ChatID DESC" InsertCommand="INSERT INTO [Chat-Value] (ChatValue, Nickname, ReciverNickname) VALUES (@ChatValue, @Nickname, @ReciverNickname)">
+            <InsertParameters>
+                <asp:ControlParameter ControlID="MessageTextBox" Name="ChatValue" PropertyName="Text" />
+                <asp:ControlParameter ControlID="NicknameLable" Name="Nickname" PropertyName="Text" />
+                <asp:ControlParameter ControlID="ContactLable" Name="ReciverNickname" PropertyName="Text" />
+            </InsertParameters>
+            <SelectParameters>
+                <asp:ControlParameter ControlID="NicknameLable" Name="Nickname" PropertyName="Text" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <div class="banner"></div>
+        <div class="Adverties">
+            <uc2:Adverties3 ID="Adverties31" runat="server" />
+        </div>
+        <div class="Nickname">
+            <asp:Label ID="NicknameLable" runat="server" CssClass="nickname"></asp:Label><br />
+            <asp:Label CssClass="Nickname" ID="InsertErrorLable" runat="server" Text="<%$ Resources:Resource, ChatRoomInsertMessageError %>" Visible="False"></asp:Label>
+            <asp:UpdatePanel ID="NicknameUpdatePanel" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <asp:GridView ID="NicknameGridView" CssClass="NicknameList" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Nickname" DataSourceID="OnlineSqlDataSource" EmptyDataText="<%$ Resources:Resource, NoOnlineUser %>" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AllowPaging="True" TabIndex="1">
+                        <Columns>
+                            <asp:CommandField ShowSelectButton="True" SelectText="<%$ Resources:Resource, Select %>" />
+                            <asp:BoundField DataField="Nickname" HeaderText="<%$ Resources:Resource, Nickname %>" ReadOnly="True" SortExpression="Nickname" />
+                        </Columns>
+                        <RowStyle CssClass="NicknameList_Row" />
+                    </asp:GridView>
+                    <asp:Timer ID="NicknameTimer" runat="server" Interval="3000" OnTick="NicknameTimer_Tick">
+                    </asp:Timer>
+                    <asp:SqlDataSource ID="OnlineSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Nickname FROM [Chat-Nickname] WHERE (Nickname &lt;&gt; @Nickname)">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="NicknameLable" Name="Nickname" PropertyName="Text" />
+                        </SelectParameters>
+                    </asp:SqlDataSource>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+        <div class="Send">
+            <asp:UpdatePanel ID="SendUpdatePanel" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <asp:Label ID="SendToLable" runat="server" Text="<%$ Resources:Resource, SendTo %>"></asp:Label>
+                    &nbsp;<asp:Label ID="ContactLable" runat="server"></asp:Label>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            <asp:UpdatePanel ID="SendMessageUpdatePanel" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <asp:Panel runat="server" ID="pan_smileys" CssClass="Smileys" Visible="false">
+                        <asp:ImageButton ID="cry" ImageUrl="~/App_Image/ChatRoom/cry.gif" runat="server" OnClick="Smiley_Click" />
+                        <asp:ImageButton ID="depressed" ImageUrl="~/App_Image/ChatRoom/depressed.gif" runat="server" OnClick="Smiley_Click" />
+                        <asp:ImageButton ID="fear" ImageUrl="~/App_Image/ChatRoom/fear.gif" runat="server" OnClick="Smiley_Click" />
+                        <asp:ImageButton ID="laugh" ImageUrl="~/App_Image/ChatRoom/laugh.gif" runat="server" OnClick="Smiley_Click" />
+                        <asp:ImageButton ID="shame" ImageUrl="~/App_Image/ChatRoom/shame.gif" runat="server" OnClick="Smiley_Click" />
+                        <asp:ImageButton ID="think" ImageUrl="~/App_Image/ChatRoom/think.gif" runat="server" OnClick="Smiley_Click" />
+                        <asp:ImageButton ID="uncomfortable" ImageUrl="~/App_Image/ChatRoom/uncomfortable.gif" runat="server" OnClick="Smiley_Click" />
+                        <asp:ImageButton ID="vomit" ImageUrl="~/App_Image/ChatRoom/vomit.gif" runat="server" OnClick="Smiley_Click" />
+                        <asp:ImageButton ID="smile" ImageUrl="~/App_Image/ChatRoom/smile.gif" runat="server" OnClick="Smiley_Click" />
+                    </asp:Panel>
+                    <asp:TextBox ID="MessageTextBox" runat="server" MaxLength="200" Enabled="False"></asp:TextBox>
+                    <asp:Button ID="SendButton" runat="server" Text="<%$ Resources:Resource, Send %>" OnClick="SendButton_Click" TabIndex="1" />
+                    <asp:Button ID="smiley" runat="server" Text="<%$ Resources:Resource, smiley %>" TabIndex="2" OnClick="smiley_Click" />
+                    <asp:Button ID="LogoutButton" runat="server" OnClick="LogoutButton_Click" TabIndex="3" Text="<%$ Resources:Resource, Logout %>" />
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            <asp:UpdatePanel ID="MessageUpdatePanel" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <asp:DataList ID="MessageDataList" runat="server" DataKeyField="ChatID" DataSourceID="MessageSqlDataSource" TabIndex="1" OnSelectedIndexChanged="MessageDataList_SelectedIndexChanged" CssClass="MessageDatalist">
+                        <ItemTemplate>
+                            <div class="ChatValue">
+                                <asp:Label ID="SenderLable" runat="server" Text='<%# Eval("Nickname") %>' CssClass="sender"></asp:Label>
+                                :<asp:TextBox ID="ChatRoomTextBox1" Text='<%# Eval("ChatValue") %>' runat="server" />
+                                <asp:Button ID="ReadMessage" runat="server" CommandName="select" Text="<%$ Resources:Resource, Read %>" />
+                            </div>
+                        </ItemTemplate>
+                        <SelectedItemTemplate>
+                            <div class="ChatValue">
+                                <uc3:ChatRoomTextBox ID="ChatRoomTextBox2" Text='<%# Eval("ChatValue") %>' runat="server" />
+                            </div>
+                        </SelectedItemTemplate>
+                    </asp:DataList>
+                    </ProgressTemplate>
+                <asp:Timer ID="MessageTimer" runat="server" Interval="1000" OnTick="MessageTimer_Tick"></asp:Timer>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+        <div class="ChatRoomDefault"></div>
+        <div class="content">
+            <asp:ContentPlaceHolder ID="DefaultContentPlaceHolder" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+    <script type="text/javascript" src="<%:WebsitePage.WebsiteRoot(true, false)%>/App_Scripts/ChatJavaScript.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</body>
+</html>

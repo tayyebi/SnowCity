@@ -1,0 +1,40 @@
+﻿.hp_Title {
+    font-size:large;
+}
+.cph_Post {
+    width:780px;
+    padding:10px;
+    margin:0 auto 0 auto;
+}
+.lbl_Time ,.lbl_Date {
+    font-size:x-small;
+}
+
+.lbl_NoAccessToThisPost {
+    background-color:#e8e0b4;
+    color:#ff6a00;
+}
+.abstractArea {
+    background-color:#fffbe5;
+    color:#978211;
+    font-size:xx-small;
+    position:relative;
+    max-width:400px;
+    min-width:400px;
+    right:200px;
+}
+    .abstractArea img {
+        max-width:300px;
+    }
+    .sideContent1 {
+    background-color:#feffcb;
+    width:180px;
+    padding:10px;
+    font-size:xx-small;
+}
+    .sideContent1 a {
+        display:block;
+    }
+.uprog_externalLink {
+    background-image:url(Loading.gif);
+}

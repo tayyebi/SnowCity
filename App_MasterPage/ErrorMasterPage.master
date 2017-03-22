@@ -1,0 +1,34 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ErrorMasterPage.master.cs" Inherits="App_MasterPage_ErrorMasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <script type="text/javascript" src="<%:WebsitePage.WebsiteRoot(true, false)%>/App_Scripts/-jquery.js"></script>
+    <link href="~/App_StyleSheet/ErrorStyleSheet.css" rel="stylesheet" type="text/css" />
+    <link href="<%$ Resources:Resource, icon %>" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+    <form id="default_form" runat="server">
+
+        <div class="default">
+            <asp:ContentPlaceHolder ID="DefaultContentPlaceHolder" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <div class="send">
+            <asp:TextBox ID="value_textbox" CssClass="valuetextbox" runat="server" TextMode="MultiLine"></asp:TextBox>
+            <br />
+            <asp:Button ID="send_button" CssClass="send_button" runat="server" Text="Send your exprience" OnClick="send_button_Click" />
+        </div>
+
+        <div class="logo">
+            <img class="logo" src="<%:WebsitePage.WebsiteRoot(true, false)%>/Logo.png" alt="Logo" />
+        </div>
+
+    </form>
+
+    <script type="text/javascript" src="<%:WebsitePage.WebsiteRoot(true, false)%>/App_Scripts/ErrorJavaScript.js"></script>
+
+</body>
+</html>

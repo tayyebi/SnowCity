@@ -1,0 +1,32 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/App_MasterPage/Users-DefaultMasterPage.master" AutoEventWireup="true" CodeFile="Users-LoggedinMasterPage.master.cs" Inherits="App_MasterPage_Users_LoggedInMasterPage" %>
+
+<%@ Register src="../App_UserControl/Users-UserControls/LoginSecurity.ascx" tagname="LoginSecurity" tagprefix="uc1" %>
+<%@ Register src="../App_UserControl/Users-UserControls/UserStatus.ascx" tagname="UserStatus" tagprefix="uc2" %>
+<%@ Register src="../App_UserControl/Adverties-UserControls/Adverties4.ascx" tagname="Adverties4" tagprefix="uc3" %>
+<%@ Register src="../App_UserControl/Users-UserControls/UserBanner.ascx" tagname="UserBanner" tagprefix="uc4" %>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="DefaultContentPlaceHolder" runat="Server">
+    <uc1:LoginSecurity ID="LoginSecurity" runat="server" />
+    <uc4:UserBanner ID="Banner" runat="server" />
+    <uc2:UserStatus ID="UserStatus" runat="server" />
+    <uc3:Adverties4 ID="Adverties" runat="server" />
+    <asp:UpdatePanel ID="UpdatePanel" runat="server" UpdateMode="Conditional">
+        <ContentTemplate>
+            <asp:ContentPlaceHolder ID="DefaultContentPlaceHolder" runat="server">
+            </asp:ContentPlaceHolder>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+    <asp:ContentPlaceHolder ID="NoAjaxContentPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+    <div class="©">
+        All parts of website and softwares are created by Mohammad Reza Tayyebi (SnowCity).
+        <hr />
+        Copyright © 2013, Mohammad Reza Tayyebi (SnowCity). All rights reserved.
+        <hr />
+        تمامی بخش های وب سایت و نرم افزار ها توسط محمدرضا طیبی (شهربرفی) ساخته شده اند.
+    </div>
+</asp:Content>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>

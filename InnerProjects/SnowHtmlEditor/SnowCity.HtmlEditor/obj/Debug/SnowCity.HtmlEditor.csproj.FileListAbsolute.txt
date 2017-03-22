@@ -1,0 +1,5 @@
+D:\Reza\Projects\SnowCity HtmlEditor\SnowCity.HtmlEditor\bin\Debug\SnowCity.HtmlEditor.dll
+D:\Reza\Projects\SnowCity HtmlEditor\SnowCity.HtmlEditor\bin\Debug\SnowCity.HtmlEditor.pdb
+D:\Reza\Projects\SnowCity HtmlEditor\SnowCity.HtmlEditor\obj\Debug\SnowCity.HtmlEditor.csprojResolveAssemblyReference.cache
+D:\Reza\Projects\SnowCity HtmlEditor\SnowCity.HtmlEditor\obj\Debug\SnowCity.HtmlEditor.dll
+D:\Reza\Projects\SnowCity HtmlEditor\SnowCity.HtmlEditor\obj\Debug\SnowCity.HtmlEditor.pdb

@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Post.master.cs" Inherits="SocialNetworking_Post_Post" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="<%:WebsitePage.WebsiteRoot(true, false)%>/All.css" rel="stylesheet" type="text/css" />
+    <link href="Post.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="f_Post" runat="server">
+        <asp:ImageButton runat="server" ID="ibtn_CMS" CssClass="ibtn_CMS" ImageUrl="~/SocialNetworking/Post/CMS.png" OnClick="ibtn_CMS_Click" />
+        <asp:ScriptManager ID="sm_Default" runat="server"></asp:ScriptManager>
+        <div class="banner">
+            <div class="banner">
+                <asp:ContentPlaceHolder ID="cph_Banner" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <div class="sideContent1">
+            <asp:ContentPlaceHolder ID="cph_SideContent1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="content">
+            <asp:ContentPlaceHolder ID="cph_Post" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

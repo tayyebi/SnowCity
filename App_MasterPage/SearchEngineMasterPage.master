@@ -1,0 +1,32 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="SearchEngineMasterPage.master.cs" Inherits="App_MasterPage_SearchEngineMasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="<%$ Resources:Resource, StyleSheetSearchEngine %>" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="<%:WebsitePage.WebsiteRoot(true, false)%>/App_Scripts/-jquery.js"></script>
+    <link href="<%$ Resources:Resource, icon %>" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+    <form id="DefaultForm" runat="server">
+        <div class="menu">
+            <pre>
+                <!--          ***       MENU ITEMS HERE
+                <asp:HyperLink runat="server" NavigateUrl="~/Default-SearchEngine.aspx" Text="<%$ Resources:Resource, SearchEngine %>"/>
+                -->
+            </pre>
+        </div>
+    <div class="content">
+        <asp:ContentPlaceHolder id="DefaultContentPlaceHolder" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+
+    <script type="text/javascript" src="<%:WebsitePage.WebsiteRoot(true, false)%>/App_Scripts/SearchEngineJavaScript.js"></script>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</body>
+</html>

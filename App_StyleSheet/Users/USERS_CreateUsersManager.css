@@ -1,0 +1,13 @@
+﻿div {
+    width:100%;
+    text-align:center;
+}
+.gv {
+    margin:0 auto 0 auto;
+    width:600px;
+    background-color:#ffff03;
+}
+.gv_Row:hover {
+    background-color:#320;
+    color:#fcfcfa;
+}

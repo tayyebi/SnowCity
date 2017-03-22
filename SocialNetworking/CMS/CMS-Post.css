@@ -1,0 +1,39 @@
+﻿
+.txt_title {
+    height: 50px;
+    width:450px;
+    background-repeat: repeat;
+    font-size:30px;
+}
+.txt_value {
+    margin-right:auto;
+    margin-left:auto;
+}
+.write {
+    margin:0px auto 0px auto;
+    background-color:rgba(255, 242, 0, 0.80);
+    text-align:center;
+}
+.preview {
+    margin:0px auto 0px auto;
+    background-image: url('div_preview.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:100%;
+    padding:50px;
+    height:615px;
+    width:400px;
+    overflow:auto;
+}
+img {
+    max-width:300px;
+}
+    img:hover {
+        transform:rotate(7deg);
+    }
+.lbl_title {
+    font-size:20px;
+}
+.lbl_value {
+    font-size:10px;
+}

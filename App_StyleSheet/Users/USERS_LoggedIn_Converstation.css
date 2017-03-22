@@ -1,0 +1,12 @@
+﻿.gv {
+    background-color:#ffd800;
+    width:90%;
+    margin:0 auto 0 auto;
+}
+.gv_Row:hover{
+    background-color:#f5f0d7;
+}
+.new, .default, .view {
+    width: 90%;
+    margin: 0 auto 0 auto;
+}

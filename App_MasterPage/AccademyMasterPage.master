@@ -1,0 +1,110 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AccademyMasterPage.master.cs" Inherits="App_MasterPage_AccademyMasterPage" %>
+
+<%@ Register src="../App_UserControl/Loading-UserControls/Loading1.ascx" tagname="Loading1" tagprefix="uc2" %>
+<%@ Register src="../App_UserControl/Adverties-UserControls/Adverties6.ascx" tagname="Adverties6" tagprefix="uc3" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="<%$ Resources:Resource, StyleSheetAcademy %>" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="<%:WebsitePage.WebsiteRoot(true, true)%>/App_Scripts/-jquery.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.banner').load('../../App_HTML/AcademyBanner.html');
+        });
+    </script>
+    <link href="<%$ Resources:Resource, icon %>" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+    <form id="form_Default" runat="server">
+        <asp:ScriptManager ID="ScriptManager" runat="server"></asp:ScriptManager>
+        <asp:UpdateProgress ID="UpdateProgress" runat="server">
+            <ProgressTemplate>
+                        <uc2:Loading1 ID="Loadin1" runat="server" />
+            </ProgressTemplate>
+        </asp:UpdateProgress>
+        <div class="sitemap">
+            <asp:ContentPlaceHolder ID="CPH_SiteMap" runat="server"></asp:ContentPlaceHolder>
+        </div>
+        <div class="banner">
+        </div>
+        <div class="Board">
+            <asp:ContentPlaceHolder ID="CPH_Board" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="Archive">
+            <asp:HyperLink ID="hp_Archive" Text="<%$ Resources:Resource , Archive %>" NavigateUrl="~/App_Page/Academy/Archive.aspx" runat="server"></asp:HyperLink>
+            <asp:DataList ID="DL_Archive" runat="server" DataKeyField="ArticleID" DataSourceID="SDS_Archive">
+                <ItemTemplate>
+                    <asp:HyperLink ID="Archive_Title" runat="server" Text='<%# Eval("Title") %>' NavigateUrl='<%# Eval("ArticleID","~/App_Page/Academy/Article.aspx?ArticleID={0}") %>' />
+                </ItemTemplate>
+                <SeparatorTemplate>
+                    <asp:Image ID="Seperator" runat="server" ImageUrl="~/App_Image/Seperator/shortline.png" />
+                </SeparatorTemplate>
+            </asp:DataList>
+        </div>
+        <div class="Read">
+            <asp:Label ID="lbl_Read" runat="server" Text="<%$ Resources:Resource, Views %>"></asp:Label>
+            <asp:DataList ID="DL_Read" runat="server" DataKeyField="ArticleID" DataSourceID="SDS_Read">
+                <ItemTemplate>
+                    <asp:HyperLink ID="Read_Title" runat="server" NavigateUrl='<%# Eval("ArticleID","~/App_Page/Academy/Article.aspx?ArticleID={0}") %>' Text='<%# Eval("Title") %>' />
+                </ItemTemplate>
+                <SeparatorTemplate>
+                    <asp:Image ID="Seperator" runat="server" ImageUrl="~/App_Image/Seperator/shortline.png" />
+                </SeparatorTemplate>
+            </asp:DataList>
+        </div>
+        <div class="Likes">
+            <asp:Label ID="bl_Like" runat="server" Text="<%$ Resources:Resource,Like %>"></asp:Label>
+            <asp:DataList ID="DL_Like" runat="server" DataKeyField="ArticleID" DataSourceID="SDS_Like">
+                <ItemTemplate>
+                    <asp:HyperLink ID="Read_Title" runat="server" NavigateUrl='<%# Eval("ArticleID","~/App_Page/Academy/Article.aspx?ArticleID={0}") %>' Text='<%# Eval("Title") %>' />
+                </ItemTemplate>
+                <SeparatorTemplate>
+                    <asp:Image ID="Seperator" runat="server" ImageUrl="~/App_Image/Seperator/shortline.png" />
+                </SeparatorTemplate>
+            </asp:DataList>
+        </div>
+        <div class="Users">
+            <asp:Label ID="lbl_Users" runat="server" Text="<%$ Resources:Resource,Teacher %>"></asp:Label>
+            <asp:DataList ID="DL_User" runat="server" DataKeyField="UserID" DataSourceID="SDS_User">
+                <ItemTemplate>
+                    <asp:HyperLink ID="Archive_Fullname" runat="server" NavigateUrl='<%# Eval("UserID","~/App_Page/Academy/Teacher.aspx?UserID={0}") %>' Text='<%# Eval("Fullname") %>' />
+                </ItemTemplate>
+                <SeparatorTemplate>
+                    <asp:Image ID="Seperator" runat="server" ImageUrl="~/App_Image/Seperator/shortline.png" />
+                </SeparatorTemplate>
+            </asp:DataList>
+        </div>
+        <div class="Group">
+            <asp:Label ID="lbl_Group" runat="server" Text="<%$ Resources:Resource,Course %>"></asp:Label>
+            <asp:DataList ID="DL_Group" runat="server" DataKeyField="GroupID" DataSourceID="SDS_Group">
+                <ItemTemplate>
+                    <asp:HyperLink ID="Archive_Fullname" runat="server" NavigateUrl='<%# Eval("GroupID","~/App_Page/Academy/Group.aspx?GroupID={0}") %>' Text='<%# Eval("Name") %>' />
+                </ItemTemplate>
+                <SeparatorTemplate>
+                    <asp:Image ID="Seperator" runat="server" ImageUrl="~/App_Image/Seperator/shortline.png" />
+                </SeparatorTemplate>
+            </asp:DataList>
+        </div>
+        <uc3:Adverties6 ID="Adverties" runat="server" />
+        <asp:UpdatePanel ID="ContentUpdatePanel" runat="server" UpdateMode="Conditional">
+            <ContentTemplate>
+                <div class="Content">
+                    <asp:ContentPlaceHolder ID="CPH_Default" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        <asp:SqlDataSource ID="SDS_Archive" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT TOP 10 Title,ArticleID FROM [Academy-Article] ORDER BY [ArticleID] DESC"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SDS_Read" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT TOP 10 Title,ArticleID FROM [Academy-Article] ORDER BY [Views] DESC"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SDS_Like" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT TOP 10 Title,ArticleID FROM [Academy-Article] ORDER BY [Likes] DESC"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SDS_User" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Fullname,UserID FROM [Users-Users] WHERE (MainType = N'Academy')"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SDS_Group" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Name,GroupID FROM [Academy-Group] ORDER BY [Name] DESC"></asp:SqlDataSource>
+    </form>
+
+    <script type="text/javascript" src="<%:WebsitePage.WebsiteRoot(true, false)%>/App_Scripts/AcademyJavaScript.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+﻿.UsersDefault {
+    background-color:white;
+    width:900px;
+    display:inline-block;
+}
+.btn_enter {
+    display:block;
+    border-radius:500%;
+    height:200px;
+    width:200px;
+    margin:10px auto 10px auto;
+}

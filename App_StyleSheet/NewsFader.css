@@ -1,0 +1,69 @@
+
+.fader{
+    position: relative;
+    height:300px;
+    overflow: hidden;
+    direction:ltr;
+} 
+ 
+.slide{
+    display:inline-block;
+    position:absolute;
+    top:-380px;
+    right:11%;
+    opacity: 0;
+    width:700px;
+    max-width:700px;
+    height:300px;
+    max-height:300px;
+}
+
+.fader .prev,
+.fader .next{
+  position: absolute;
+  height: 80px;
+  line-height: 55px;
+  width: 50px;
+  font-size: 100px;
+  text-align: center;
+  color: #fff;
+  top: 50%;
+  left: 0;
+  z-index: 4;
+  margin-top: -25px;
+  cursor: pointer;
+  opacity: .7;
+  transition: all 150ms;
+}
+
+
+.fader .next{
+  left: auto;
+  right: 0;
+}
+
+.fader .pager_list{
+  position: absolute;
+  width: 800px;
+  height: 40px;
+  line-height: 40px;
+  bottom: 0;
+  text-align: center;
+  z-index: 4;
+  text-align:center;
+}
+
+.fader .pager_list li{
+  display: block;
+  width: 5px;
+  height: 5px;
+  margin: 0 7px;
+  background: #fff;
+  opacity: .7;
+  text-indent: -999px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 150ms;
+}
+
+

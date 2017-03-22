@@ -1,0 +1,67 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="NewsMasterPage.master.cs" Inherits="App_MasterPage_NewsMasterPage" %>
+<%@ Register src="../App_UserControl/News-UserControls/News-Archive.ascx" tagname="News" tagprefix="uc2" %>
+<%@ Register src="../App_UserControl/Adverties-UserControls/Adverties2.ascx" tagname="Adverties2" tagprefix="uc3" %>
+<%@ Register src="../App_UserControl/Loading-UserControls/Loading1.ascx" tagname="Loading1" tagprefix="uc5" %>
+<%@ Register src="../App_UserControl/News-UserControls/News-User.ascx" tagname="News" tagprefix="uc6" %>
+<%@ Register src="../App_UserControl/News-UserControls/News-Group.ascx" tagname="News" tagprefix="uc7" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="<%$ Resources:Resource, StyleSheetNews %>" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="<%:WebsitePage.WebsiteRoot(true, false)%>/App_Scripts/-jquery.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.banner').load('<%:WebsitePage.WebsiteRoot(true, false)%>/App_HTML/NewsBanner.html');
+        });
+    </script>
+    <link href="<%$ Resources:Resource, icon %>" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+    <form id="DefaultForm" class="content" runat="server">
+        <asp:ScriptManager ID="DefaultScriptManager" runat="server">
+        </asp:ScriptManager>
+        <div class="banner"></div>
+
+        <uc3:Adverties2 ID="News_Adverties2" runat="server" />
+
+        <uc2:News ID="News_Archive" runat="server" />
+
+        <asp:UpdateProgress ID="DefaultUpdateProgress" runat="server">
+            <ProgressTemplate>
+                <uc5:Loading1 ID="Loading11" runat="server" />
+            </ProgressTemplate>
+        </asp:UpdateProgress>
+
+        <uc7:News ID="News_Group" runat="server" />
+
+        <uc6:News ID="News_Jornal" runat="server" />
+
+        <div id="SiteMap">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolderSiteMap" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <div id="NewsDefault">
+            <asp:ContentPlaceHolder ID="CustomContentPlaceHolder" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <asp:UpdatePanel ID="DefaultUpdatePanel" runat="server">
+            <ContentTemplate>
+                <div class="NewsUpdatePanel">
+                    <asp:ContentPlaceHolder ID="DefaultContentPlaceHolder" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        <asp:ContentPlaceHolder ID="NoAjax" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+
+    <script type="text/javascript" src="<%:WebsitePage.WebsiteRoot(true, false)%>/App_Scripts/NewsJavaScript.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</body>
+</html>

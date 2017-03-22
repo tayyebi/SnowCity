@@ -1,0 +1,5 @@
+D:\Reza\Projects\Snow Dll\SnowWebPageTitleSaver\SnowWebPageTitleSaver\bin\Debug\SnowWebPageTitleSaver.dll
+D:\Reza\Projects\Snow Dll\SnowWebPageTitleSaver\SnowWebPageTitleSaver\bin\Debug\SnowWebPageTitleSaver.pdb
+D:\Reza\Projects\Snow Dll\SnowWebPageTitleSaver\SnowWebPageTitleSaver\obj\Debug\SnowWebPageTitleSaver.csprojResolveAssemblyReference.cache
+D:\Reza\Projects\Snow Dll\SnowWebPageTitleSaver\SnowWebPageTitleSaver\obj\Debug\SnowWebPageTitleSaver.dll
+D:\Reza\Projects\Snow Dll\SnowWebPageTitleSaver\SnowWebPageTitleSaver\obj\Debug\SnowWebPageTitleSaver.pdb

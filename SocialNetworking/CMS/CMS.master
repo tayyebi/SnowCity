@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="CMS.master.cs" Inherits="SocialNetworking_CMS_CMS" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="CMS.css" rel="stylesheet" type="text/css" />
+    <link href="<%:WebsitePage.WebsiteRoot(true, false)%>/All.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="f_Default" runat="server">
+        <asp:ScriptManager ID="sm_Default" runat="server"></asp:ScriptManager>
+        <asp:ImageButton ID="ibtn_ViewPost" runat="server" CssClass="ibtn_ViewPost" ImageUrl="Post.png" OnClick="ibtn_ViewPost_Click" ToolTip="نمایش پست ها" />
+        <div class="maindiv">
+            <div class="banner">
+                <asp:Label ID="lbl_gender" runat="server" CssClass="lbl_gender"></asp:Label>
+                <asp:Label ID="lbl_fullname" runat="server" CssClass="lbl_fullname"></asp:Label>
+            </div>
+            <div class="menu">
+                <asp:HyperLink ID="hp_DefaultPage" runat="server" NavigateUrl="~/SocialNetworking/CMS/CMS-Default.aspx">صفحه اصلی</asp:HyperLink>
+                <asp:HyperLink ID="hp_Post" runat="server" NavigateUrl="~/SocialNetworking/CMS/CMS-Post.aspx">ارسال پست جدید</asp:HyperLink>
+            </div>
+            <div class="content">
+                <asp:Label ID="lbl_pagetitle" runat="server" CssClass="lbl_pagetitle"></asp:Label>
+                <br />
+                <asp:ContentPlaceHolder ID="cph_Default" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div class="content2">
+                    <asp:HyperLink ID="hp_Post_View" runat="server" CssClass="hp_CMS_Post_View" NavigateUrl="~/SocialNetworking/CMS/CMS-Post-View.aspx">مدیریت پست ها</asp:HyperLink>
+                    <asp:HyperLink ID="hp_PostPrevilege" runat="server" CssClass="hp_CMS_Post_Reputation" NavigateUrl="~/SocialNetworking/CMS/CMS-Post-Reputation.aspx">امتیازات پست ها</asp:HyperLink>
+                    <asp:HyperLink ID="hp_PostComment" runat="server" CssClass="hp_CMS_Post_Comment" NavigateUrl="~/SocialNetworking/CMS/CMS-Comment.aspx">نظرات پست ها</asp:HyperLink>
+                    <asp:HyperLink ID="hp_NewPost" runat="server" CssClass="hp_CMS_Post" NavigateUrl="~/SocialNetworking/CMS/CMS-Post.aspx">پست جدید</asp:HyperLink>
+                    <asp:HyperLink ID="hp_Inbox" runat="server" NavigateUrl="~/SocialNetworking/CMS/CMS-Post-View.aspx">صندوق ورودی</asp:HyperLink>
+                    <asp:HyperLink ID="hp_Sent" runat="server" NavigateUrl="~/SocialNetworking/CMS/CMS-Post-View.aspx">موارد ارسالی</asp:HyperLink>
+                    <asp:HyperLink ID="hp_Compose" runat="server" NavigateUrl="~/SocialNetworking/CMS/CMS-Post-View.aspx">ارسال نامه جدید</asp:HyperLink>
+                    <asp:HyperLink ID="hp_LinkToExternal" runat="server" NavigateUrl="~/SocialNetworking/CMS/CMS-ExternalLink.aspx">پیوند به خارج</asp:HyperLink>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

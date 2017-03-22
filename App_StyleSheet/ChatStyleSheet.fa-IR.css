@@ -1,0 +1,137 @@
+﻿/*      Global Rules     */
+a {
+    text-decoration:none;
+    background-color:#ceff00;
+    color:#536702;
+    text-shadow:0 0 10px;
+    border-radius:5px;
+}
+    a:hover {
+        background-color:#394602;
+        color:#ceff00;
+    }
+input {
+    border-width:0;
+    text-shadow:0 0 10px;
+    min-height:30px;
+    background-color:#ffd800;
+    color:#4e4202;
+    border-radius:5px;
+}
+    input:hover ,input:focus {
+        border-radius:0;
+        box-shadow:0 0 10px;
+    }
+/*      Chat Default     */
+body {
+    background-color:#ceff00;
+    background-image:url(Background.png);
+    background-size:100px;
+    direction:rtl;
+    margin:0;
+    color:#312b05;
+    text-shadow:0 0 10px;
+}
+.Error {
+    display:block;
+    color:red;
+}
+.updateprogress {
+    margin:0 auto 0 auto;
+    background-color:#0d5c01;
+    position:fixed;
+    width:100%;
+    text-align:center;
+}
+.Enter_Button {
+    margin:0 auto 0 auto;
+    display:block;
+    height:100px;
+    width:100px;
+    border-width:0;
+}
+.Enter_TextBox {   
+    margin:0 auto 0 auto;
+    height:100px;
+    display:block;
+    font-size:30px;
+    width:600px;
+    box-shadow:0 0 10px #ffd800;
+}
+/*      Chat Page        */
+.Adverties, .Send ,.Nickname ,.content{
+    position:absolute;
+    padding:10px;
+    border-radius:5px;
+    min-width:300px;
+    max-width:300px;
+    min-height:600px;
+    max-height:600px;
+    box-shadow:0 0 10px;
+}
+.Nickname {
+    right:0;
+    background-color:#ceff00;
+}
+.Send {
+    right:325px;
+    background-color:#7c9807;
+}
+.Adverties {
+    left:325px;
+    background-color:#ffbb00;
+    overflow-y:scroll;
+}
+.content {
+    left:0;
+    background-color:#f7df1e;
+}
+
+.NicknameList {
+    width:100%;
+}
+.NicknameList_Row:hover {
+    background-color:yellow;
+}
+
+.banner {
+    width:1300px;
+    font-size:72px;
+    margin: 0 auto 0 auto;
+    text-align:center;
+    background-color:#241f01;
+    color:#fafa99;
+    height:400px;
+    background-image:url(../../../Logo.png);
+    background-repeat:no-repeat;
+    background-size:auto 100%;
+    max-height:150px;
+}
+.MessageDatalist {
+    width:100%;
+}
+
+.ChatValue {
+    background-color:#ceff00;
+}
+.ChatValue img{
+    max-width:40px;
+}
+
+.Smileys input {
+    max-height:30px;
+}
+
+.SendCenter {
+    border-radius:5px;
+    box-shadow:0 0 10px 5px #86740a;
+}
+.nickname {
+    color:#86740a;
+    background-color:#fff8ce;
+    float:right;
+}
+.value {
+    background-color:#86740a;
+    color:#fff8ce;
+}

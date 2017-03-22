@@ -1,0 +1,29 @@
+﻿.like, .hate {
+    background-repeat:no-repeat;
+    height:270px;
+    width:270px;
+    padding:10px;
+    background-position:center;
+    background-size:250px 250px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.like-rate, .hate-rate {
+    margin:0px auto 0px auto;
+    font-size:50px;
+    text-align:center;
+    background-color:rgba(255, 216, 0, 0.90);
+    text-shadow: 0 0 40px;
+}
+.like {
+    background-image: url('Like.png');
+}
+.like-rate {
+    color:green;
+}
+.hate-rate {
+    color:red;
+}
+.hate {
+    background-image: url('Hate.png');
+}

@@ -1,0 +1,42 @@
+C:\Users\MohammadReza.DIAMOND-PC\Desktop\WBrowser\WBrowser\obj\Debug\WBrowser.AddFavorites.resources
+C:\Users\MohammadReza.DIAMOND-PC\Desktop\WBrowser\WBrowser\obj\Debug\WBrowser.Close.resources
+C:\Users\MohammadReza.DIAMOND-PC\Desktop\WBrowser\WBrowser\obj\Debug\WBrowser.DeleteBrowsingHistory.resources
+C:\Users\MohammadReza.DIAMOND-PC\Desktop\WBrowser\WBrowser\obj\Debug\WBrowser.InternetOption.resources
+C:\Users\MohammadReza.DIAMOND-PC\Desktop\WBrowser\WBrowser\obj\Debug\WBrowser.WBrowser.resources
+C:\Users\MohammadReza.DIAMOND-PC\Desktop\WBrowser\WBrowser\obj\Debug\WBrowser.Open.resources
+C:\Users\MohammadReza.DIAMOND-PC\Desktop\WBrowser\WBrowser\obj\Debug\WBrowser.OrganizeFavorites.resources
+C:\Users\MohammadReza.DIAMOND-PC\Desktop\WBrowser\WBrowser\obj\Debug\WBrowser.RenameLink.resources
+C:\Users\MohammadReza.DIAMOND-PC\Desktop\WBrowser\WBrowser\obj\Debug\WBrowser.csproj.GenerateResource.Cache
+C:\Users\MohammadReza.DIAMOND-PC\Desktop\WBrowser\WBrowser\bin\Debug\Snow Browser.exe
+C:\Users\MohammadReza.DIAMOND-PC\Desktop\WBrowser\WBrowser\bin\Debug\Snow Browser.pdb
+C:\Users\MohammadReza.DIAMOND-PC\Desktop\WBrowser\WBrowser\obj\Debug\SnowBrowser.Properties.Resources.resources
+C:\Users\MohammadReza.DIAMOND-PC\Desktop\WBrowser\WBrowser\obj\Debug\Snow Browser.exe
+C:\Users\MohammadReza.DIAMOND-PC\Desktop\WBrowser\WBrowser\obj\Debug\Snow Browser.pdb
+C:\Users\MohammadReza.DIAMOND-PC\Desktop\WBrowser\WBrowser\obj\Debug\SnowBrowser.CR.resources
+C:\Users\MohammadReza.DIAMOND-PC\Desktop\WBrowser\WBrowser\obj\Debug\WBrowser.csprojResolveAssemblyReference.cache
+C:\Users\MohammadReza.DIAMOND-PC\Desktop\WBrowser\WBrowser\obj\Debug\SnowBrowser.Controls.SplitButton.resources
+C:\Users\MohammadReza.DIAMOND-PC\Desktop\WBrowser\WBrowser\obj\Debug\SnowBrowser.SourceViewer.resources
+F:\Projects\Snow Browser\WBrowser\WBrowser\bin\Debug\Snow Browser.exe.manifest
+F:\Projects\Snow Browser\WBrowser\WBrowser\bin\Debug\Snow Browser.application
+F:\Projects\Snow Browser\WBrowser\WBrowser\bin\Debug\Snow Browser.exe
+F:\Projects\Snow Browser\WBrowser\WBrowser\bin\Debug\Snow Browser.pdb
+F:\Projects\Snow Browser\WBrowser\WBrowser\obj\Debug\WBrowser.csprojResolveAssemblyReference.cache
+F:\Projects\Snow Browser\WBrowser\WBrowser\obj\Debug\WBrowser.AddFavorites.resources
+F:\Projects\Snow Browser\WBrowser\WBrowser\obj\Debug\WBrowser.Close.resources
+F:\Projects\Snow Browser\WBrowser\WBrowser\obj\Debug\SnowBrowser.Controls.SplitButton.resources
+F:\Projects\Snow Browser\WBrowser\WBrowser\obj\Debug\SnowBrowser.CR.resources
+F:\Projects\Snow Browser\WBrowser\WBrowser\obj\Debug\WBrowser.DeleteBrowsingHistory.resources
+F:\Projects\Snow Browser\WBrowser\WBrowser\obj\Debug\WBrowser.InternetOption.resources
+F:\Projects\Snow Browser\WBrowser\WBrowser\obj\Debug\SnowBrowser.SourceViewer.resources
+F:\Projects\Snow Browser\WBrowser\WBrowser\obj\Debug\SnowBrowser.SplashScreen.resources
+F:\Projects\Snow Browser\WBrowser\WBrowser\obj\Debug\WBrowser.WBrowser.resources
+F:\Projects\Snow Browser\WBrowser\WBrowser\obj\Debug\WBrowser.Open.resources
+F:\Projects\Snow Browser\WBrowser\WBrowser\obj\Debug\WBrowser.OrganizeFavorites.resources
+F:\Projects\Snow Browser\WBrowser\WBrowser\obj\Debug\SnowBrowser.Properties.Resources.resources
+F:\Projects\Snow Browser\WBrowser\WBrowser\obj\Debug\WBrowser.RenameLink.resources
+F:\Projects\Snow Browser\WBrowser\WBrowser\obj\Debug\WBrowser.csproj.GenerateResource.Cache
+F:\Projects\Snow Browser\WBrowser\WBrowser\obj\Debug\Snow Browser.exe.manifest
+F:\Projects\Snow Browser\WBrowser\WBrowser\obj\Debug\Snow Browser.application
+F:\Projects\Snow Browser\WBrowser\WBrowser\obj\Debug\Snow Browser.exe
+F:\Projects\Snow Browser\WBrowser\WBrowser\obj\Debug\Snow Browser.pdb
+F:\Projects\Snow Browser\WBrowser\WBrowser\obj\Debug\SnowBrowser.Controls.Flip.UserControl1.resources

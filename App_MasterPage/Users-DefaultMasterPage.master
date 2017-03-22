@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="<%$ Resources:Resource, icon %>" rel="shortcut icon" type="image/x-icon" />
+    <link href="<%$ Resources:Resource, StyleSheetUsers %>" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="<%:WebsitePage.WebsiteRoot(true, false)%>/App_Scripts/-jquery.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.banner').load('<%:WebsitePage.WebsiteRoot(true, false)%>/App_HTML/UsersBanner.html');
+        });
+    </script>
+    <link href="<%$ Resources:Resource, icon %>" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="DefaultScriptManager" runat="server">
+        </asp:ScriptManager>
+        <asp:UpdateProgress ID="DefaultUpdatePanelUpdateProgress" runat="server" DisplayAfter="0">
+            <ProgressTemplate>
+                <div class="updateprogress">
+                    <asp:Image ID="updateprogress" runat="server" ImageUrl="~/App_Image/Loading.gif" />
+                </div>
+            </ProgressTemplate>
+        </asp:UpdateProgress>
+        <div class="banner"></div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="DefaultContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+    <script type="text/javascript" src="<%:HttpContext.Current.Request.Url.Scheme + "://" + HttpContext.Current.Request.Url.Host.ToString().ToUpper() + ":" + HttpContext.Current.Request.Url.Port.ToString() + "/" + "App_Scripts/Users/UsersJavaScript.js"%>"></script>
+    <asp:contentplaceholder id="head" runat="server">
+    </asp:contentplaceholder>
+
+</body>
+</html>

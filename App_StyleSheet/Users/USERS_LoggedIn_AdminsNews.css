@@ -1,0 +1,10 @@
+﻿.gv, .dt {
+    width:100%;
+    margin:0 auto 0 auto;
+    color:#ffe5cd;
+    background-color:#1f0f00;
+}
+.gv_Row:hover ,.selected {
+    background-color:#ffe5cd;
+    color:#1f0f00;
+}

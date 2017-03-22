@@ -1,0 +1,15 @@
+﻿.SnowCode , .SnowCode img {
+    z-index: 100000;
+    position:fixed;
+    top:0;
+    left:150px;
+    width:100px;
+    height:100px;
+    opacity:.5;
+    border-bottom-right-radius:20px;
+}
+.SnowCode:hover, .SnowCode img:hover {
+    opacity:1;
+    width:200px;
+    height:200px;
+}
